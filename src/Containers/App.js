@@ -1,12 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import './App.css';
 import 'tachyons';
-import Header from '../Components/Header';
-import CardList from '../Components/CardList';
-import Searchbox from '../Components/Searchbox';
-import Scroll from '../Components/Scroll';
-import ErrorBoundry from '../Components/ErrorBoundry';
+import MainPage from '../Components/MainPage';
 import {setSearchField, requestRobots} from '../actions';
 
 const mapStateToProps = state => {
@@ -33,25 +28,8 @@ class App extends React.Component {
   }
 
   render() {
-    const {searchField, onSearchChange, robots, isPending} = this.props;
-    const filteredRobots = robots.filter(robot => {
-      return robot.name.toLocaleLowerCase().includes(searchField.toLocaleLowerCase());
-    });
-
-    return isPending ?
-       <h1>Loading</h1> :
-       (
-        <div className='tc'>
-          <Header />
-          <Searchbox searhcChange={onSearchChange}/>
-          <Scroll>
-            <ErrorBoundry>
-              <CardList robots={filteredRobots}/>
-            </ErrorBoundry>
-          </Scroll>
-        </div>
-      )
-   } 
+    return <MainPage {...this.props} />
+  } 
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

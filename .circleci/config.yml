@@ -24,7 +24,7 @@ jobs:
       - run: echo "hellooooo!"
 workflows:
   version: 2.1
-  troy_anney:
+  build_test:
     jobs:
       - build
       - hithere

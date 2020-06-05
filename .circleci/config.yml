@@ -12,8 +12,8 @@ jobs:
     steps:
       - checkout # check out the code in the project directory
       - run: echo "Double trouble" # run the `echo` command
-workflow:
-  bersion: 2.1
+workflows:
+  version: 2.1
   troy_anney:
     jobs:
       - troy

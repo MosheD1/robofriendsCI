@@ -20,7 +20,7 @@ class MainPage extends React.Component {
   }
 
   render() {
-    const {searchField, onSearchChange, robots, isPending} = this.props;
+    const {onSearchChange, robots, isPending} = this.props;
 
     return isPending ?
        <h1>Loading</h1> :
